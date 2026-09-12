@@ -375,6 +375,50 @@ Focuses on funding risk and data quality.
 This page helps users understand both funding risk and the completeness of the underlying data.
 
 ---
+## 🏆 Final Key Outcomes — What the Data Tells Us
+
+Based on number of funding records (deals) in the cleaned dataset:
+
+### 🥇 Best Performing City
+**Bengaluru** 🏙️ is the strongest startup hub in India, leading with **855 funding records** — nearly 1.5x more than the next city, Mumbai (575).
+
+| Rank | City | Records |
+|---|---|---|
+| 🥇 1 | Bengaluru | 855 |
+| 🥈 2 | Mumbai | 575 |
+| 🥉 3 | New Delhi | 463 |
+| 4 | Gurugram | 342 |
+
+> 💡 **Insight:** Bengaluru's dominance reflects its position as India's tech and startup capital, attracting the highest deal volume year after year.
+
+### 🥇 Best Performing Industry / Sector
+**Consumer Internet** 🌐 is the most actively funded sector, with **943 funding records** — clearly ahead of Technology (478) and E-Commerce (300).
+
+| Rank | Sector | Records |
+|---|---|---|
+| 🥇 1 | Consumer Internet | 943 |
+| 🥈 2 | Technology | 478 |
+| 🥉 3 | E-Commerce | 300 |
+| 4 | Healthcare | 73 |
+| 5 | Finance | 63 |
+
+> 💡 **Insight:** Consumer Internet, Technology, and E-Commerce together account for the vast majority of all funding activity, showing investors strongly favor digital-first, consumer-facing business models over traditional sectors.
+
+### 📈 Best Performing Year
+**2017** was the standout year, posting the highest year-over-year growth at **+106.63%**, more than doubling the funding seen in 2016.
+
+### 📉 Weakest Performing Year
+**2020** recorded the sharpest decline at **-93.27%** compared to 2019 (note: this reflects the partial 2020 data available in the dataset, not a full calendar year).
+
+### 📝 Note on "Best by Amount" vs "Best by Count"
+The rankings above are based on **number of deals/records**, which shows *where startup activity is concentrated*. The **exact highest-funded city and sector by total ₹/$ amount** should be confirmed from the SQL `SUM(amount_clean)` output in `startup_analysis.sql`, since a city/sector can have fewer deals but larger average deal sizes (e.g. a sector with few but very large funding rounds could out-earn one with many small deals).
+
+| Question | Where to look |
+|---|---|
+| Which city has the most **deals**? | Bengaluru (855) — confirmed above |
+| Which city has the highest **total funding amount**? | See SQL `GROUP BY city_clean ORDER BY SUM(amount_clean) DESC` |
+| Which sector has the most **deals**? | Consumer Internet (943) — confirmed above |
+| Which sector has the highest **total funding amount**? | See SQL `GROUP BY industry_clean ORDER BY SUM(amount_clean) DESC` |
 
 ## 📌 Major Project Outcomes
 
